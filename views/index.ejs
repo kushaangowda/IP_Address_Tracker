@@ -13,32 +13,32 @@
       .attribution { font-size: 11px; text-align: center; }
       .attribution a { color: hsl(228, 45%, 44%); }
     </style>
-    </head>
-    <body>
-        IP Address Tracker
-        <form method="post">
-            <input type="text" name="ip_address"  placeholder="Search for any IP address or domain">
-            <input type="submit" name="submit" value=">">
-        </form>
-        <%if((typeof str!='undefined')){%>
-            <%str = str.replace(/:/g,"");%>
-            <%str = str.replace(/{/g,"");%>
-            <%str = str.replace(/}/g,"");%>
-            <%str = str.split(",");%>
-            <p><%=str%></p>
-            <%var ip_address = str[0].slice(5,str[0].length-1);%>
-            <%var location = str[3].slice(7,str[3].length-1)+' '+str[2].slice(9,str[2].length-1)+' '+str[1].slice(20,str[1].length-1)+' '+str[6].slice(13,str[6].length-1);%>
-            <%var timezone = 'UTC'+str[7].slice(11,str[7].length-1);%>
-            <%var isp = str[str.length-4].slice(6,str[str.length-4].length-1);%>
+</head>
+<body>
+    IP Address Tracker
+    <form method="post">
+        <input type="text" name="ip_address"  placeholder="Search for any IP address or domain">
+        <input type="submit" name="submit" value=">">
+    </form>
+    <%if((typeof str!='undefined')){%>
+        <%str = str.replace(/:/g,"");%>
+        <%str = str.replace(/{/g,"");%>
+        <%str = str.replace(/}/g,"");%>
+        <%str = str.split(",");%>
+        <p><%=str%></p>
+        <%var ip_address = str[0].slice(5,str[0].length-1);%>
+        <%var location = str[3].slice(7,str[3].length-1)+' '+str[2].slice(9,str[2].length-1)+' '+str[1].slice(20,str[1].length-1)+' '+str[6].slice(13,str[6].length-1);%>
+        <%var timezone = 'UTC'+str[7].slice(11,str[7].length-1);%>
+        <%var isp = str[str.length-4].slice(6,str[str.length-4].length-1);%>
 
-            IP Address <%= ip_address%><br/>
-            Location <%= location%><br/>
-            Timezone <%= timezone%><br/>
-            ISP <%= isp%><br/>
-        <%}%>
-        <div class="attribution">
-          Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
-          Coded by <a href="https://github.com/kushaangowda">Kushaan Gowda</a>.
-        </div>
-    </body>
+        IP Address <%= ip_address%><br/>
+        Location <%= location%><br/>
+        Timezone <%= timezone%><br/>
+        ISP <%= isp%><br/>
+    <%}%>
+    <div class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
+        Coded by <a href="https://github.com/kushaangowda">Kushaan Gowda</a>.
+    </div>
+</body>
 </html>
