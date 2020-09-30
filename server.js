@@ -30,7 +30,9 @@ app.use(logger('dev'));
 app.listen(port, () => console.log(`listening to PORT ${port}...`));
 
 app.get('/',(req,res)=>{
-	res.render('index.ejs');
+	var ip_address = '';
+	var url = api_url + 'apiKey=' + api_key + '&ipAddress=' + ip_address;
+	getLocation(res,ip_address,url);
 })
 
 app.post('/',(req,res)=>{
