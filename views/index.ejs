@@ -17,6 +17,30 @@
     <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
 
     <link rel="stylesheet" type="text/css" href="css/index.css">
+
+    <!-- <script type="text/javascript">
+        function cards(){
+            var mess = document.getElementById('btt').innerHTML;
+            var card1 = document.getElementById('carda');
+            var card2 = document.getElementById('cardb');
+            var card3 = document.getElementById('cardc');
+            var card4 = document.getElementById('cardd');
+            if(mess == "Hide Data"){
+                document.getElementById('btt').innerHTML = "Show Data";
+                card1.style.display="none";
+                card2.style.display="none";
+                card3.style.display="none";
+                card4.style.display="none";
+            }
+            else{
+                document.getElementById('btt').innerHTML = "Hide Data";
+                card1.style.display="";
+                card2.style.display="";
+                card3.style.display="";
+                card4.style.display="";
+            }
+        }
+    </script> -->
 </head>
 <body>
     <div class="container">
@@ -29,9 +53,9 @@
         </form> -->
         <form method="post">
             <div class="input-group">
-                <input type="text" class="form-control form-control-md" aria-label="Text input with segmented dropdown button" name="ip_address"  placeholder="Search for IP address or domain" style="border-radius: 10px 0px 0px 10px" required="true">
+                <input type="text" class="form-control form-control-md" aria-label="Text input with segmented dropdown button" name="ip_address"  placeholder="Search for IP address or domain" style="border-radius: 10px 0px 0px 10px" required>
                 <div class="input-group-append">
-                    <button type="submit" class="btn btn-outline-secondary btn-dark btn-md" style="background-color: #000;color: #FFF; border-radius: 0px 10px 10px 0px; border:1px solid black;"><img src="/styles/images/icon-arrow.png"></button>
+                    <button type="submit" class="btn btn-outline-secondary btn-dark btn-md" style="background-color: #000;color: #FFF; border-radius: 0px 10px 10px 0px; border:1px solid black;"><img src="/styles/images/icon-arrow.png" alt="GO"></button>
                 </div>
             </div>
         </form>
@@ -70,7 +94,7 @@
 
                 L.marker([lat, lng],{icon: blackIcon}).addTo(map);
             </script>
-
+            <!-- <button onclick="cards()" id='btt' class="btn btn-primary">Hide Data</button> -->
             <div class="card-group" style="position: relative;" style="width: 60%;">
                 <div class="card col-sm-12" id="carda" style="margin: 0;">
                     <div class="card-body" style=" padding: 0px;">
@@ -78,13 +102,13 @@
                         <h5 class="card-title" style="font-weight: bold;"><%= ip_address%></h5>
                     </div>
                 </div>
-                <div class="card col-sm-12" style="margin: 0;">
+                <div class="card col-sm-12" id="cardc" style="margin: 0;">
                     <div class="card-body" style=" padding: 0px;">
                         <p class="card-text" style="font-weight: bold;"><small class="text-muted">LOCATION</small></p>
                         <h5 class="card-title" style="font-weight: bold;"><%= location%></h5>
                     </div>
                 </div>
-                <div class="card col-sm-12" style="margin: 0;">
+                <div class="card col-sm-12" id="cardd" style="margin: 0;">
                     <div class="card-body" style=" padding: 0px;">
                         <p class="card-text" style="font-weight: bold;"><small class="text-muted">TIMEZONE</small></p>
                         <h5 class="card-title" style="font-weight: bold;"><%= timezone%></h5>
