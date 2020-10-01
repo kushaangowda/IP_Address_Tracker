@@ -68,7 +68,13 @@ async function getLocation(res,ip,url){
 	    response.on('data', function(chunk) { str += chunk; });
 	    response.on('end', function() { 
 	    	console.log(str); 
-			res.render('index.ejs',{str:str});
+	    	var k = str.split(",");
+	    	if(k.length<10){
+	    		res.render('index.ejs',{error:'IP Address or Domain Name not found'});
+	    	}
+	    	else{
+				res.render('index.ejs',{str:str});
+			}
 	    });
 	}).end();
 }
