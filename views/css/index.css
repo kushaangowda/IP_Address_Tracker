@@ -14,6 +14,8 @@
 }
 body{
 	background-image: url('../styles/images/pattern-bg.png');
+	background-repeat: no-repeat;
+	background-size: cover;
 	font-family: 'Rubik';
 	padding: 10px;
 	margin: 10px;
